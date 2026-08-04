@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LANtern – Support & FAQ</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 32px 20px 80px;
+    color: #1c1c1e; background: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e5ea; background: #1c1c1e; }
+    a { color: #6cb4ff; }
+    .card { background: #2c2c2e !important; border-color: #3a3a3c !important; }
+    details { border-color: #3a3a3c !important; }
+  }
+  h1 { font-size: 1.9rem; margin-bottom: 4px; }
+  h2 { font-size: 1.3rem; margin-top: 40px; border-top: 1px solid #e5e5ea; padding-top: 24px; }
+  .sub { color: #8e8e93; margin-top: 0; }
+  a { color: #0a84ff; }
+  .card {
+    background: #f2f2f7; border: 1px solid #e5e5ea; border-radius: 14px;
+    padding: 16px 20px; margin: 20px 0;
+  }
+  details {
+    border: 1px solid #e5e5ea; border-radius: 12px; padding: 4px 16px; margin: 10px 0;
+  }
+  summary { font-weight: 600; cursor: pointer; padding: 10px 0; }
+  details p { margin-top: 0; }
+  footer { margin-top: 48px; font-size: .85rem; color: #8e8e93; }
+</style>
+</head>
+<body>
+  <h1>LANtern – Support</h1>
+  <p class="sub">Hilfe, häufige Fragen und Kontakt · Help, FAQ and contact</p>
+
+  <div class="card">
+    <strong>Kontakt / Contact:</strong><br>
+    Schreib uns bei Fragen, Fehlern oder Wünschen an:<br>
+    For questions, bugs or feature requests, email us at:<br>
+    <a href="mailto:DEINE-EMAIL@example.com">DEINE-EMAIL@example.com</a>
+  </div>
+
+  <h2>Häufige Fragen (Deutsch)</h2>
+
+  <details>
+    <summary>Warum sehe ich bei manchen Geräten nur die IP-Adresse und keinen Namen?</summary>
+    <p>
+      Namen stammen aus Bonjour/mDNS oder DNS. Geräte, die ihren Namen nicht im
+      Netzwerk ankündigen (viele einfache IoT-Geräte), lassen sich nicht
+      benennen – dann bleibt nur die IP. Das ist eine Eigenschaft des jeweiligen
+      Geräts, keine Fehlfunktion.
+    </p>
+  </details>
+
+  <details>
+    <summary>Warum fehlt bei manchen Geräten die MAC-Adresse?</summary>
+    <p>
+      iOS gibt MAC-Adressen nur für Geräte heraus, die kürzlich aktiv waren und
+      in der ARP-Tabelle des Systems stehen. Für inaktive Geräte ist die MAC
+      nicht verfügbar. Diese Einschränkung betrifft alle Netzwerk-Apps auf iOS
+      gleichermaßen.
+    </p>
+  </details>
+
+  <details>
+    <summary>Warum zeigt die App keine genaue Signalstärke in dBm?</summary>
+    <p>
+      iOS stellt normalen Apps keinen exakten dBm-Wert und keine zuverlässige
+      Signalstärke bereit. LANtern misst die WLAN-Qualität deshalb ehrlich über
+      die Antwortzeit zu deinem Router: In Funklöchern steigt sie spürbar. Das
+      ist ein echtes, nutzbares Maß statt einer erfundenen Zahl.
+    </p>
+  </details>
+
+  <details>
+    <summary>Warum finde ich keine Geräte aus anderen VLANs?</summary>
+    <p>
+      Ein iPhone kann nur das Subnetz erreichen, in dem es selbst hängt. Geräte
+      in anderen VLANs oder Subnetzen sind über die normale IP-Schicht nicht
+      erreichbar – das kann keine iOS-App umgehen. Die App zeigt dir klar,
+      welches Subnetz gerade abgedeckt ist.
+    </p>
+  </details>
+
+  <details>
+    <summary>Der Scan eines großen Netzwerks dauert lange – ist das normal?</summary>
+    <p>
+      Ja. Große Netze (z. B. /16 mit über 65.000 Adressen) brauchen mehr Zeit.
+      Die App weist vorher darauf hin und arbeitet mit erhöhter Parallelität,
+      um es zu beschleunigen.
+    </p>
+  </details>
+
+  <details>
+    <summary>Wie stelle ich meinen Pro-Kauf wieder her?</summary>
+    <p>
+      Öffne die Kaufansicht und tippe auf „Käufe wiederherstellen". Melde dich
+      dabei mit derselben Apple-ID an, mit der du gekauft hast.
+    </p>
+  </details>
+
+  <details>
+    <summary>Darf ich jedes Netzwerk scannen?</summary>
+    <p>
+      Nein. Scanne nur Netzwerke, die dir gehören oder für die du eine
+      ausdrückliche Erlaubnis hast. Das Scannen fremder Netze kann strafbar sein
+      (§ 202a StGB in Deutschland, § 118a StGB in Österreich).
+    </p>
+  </details>
+
+  <h2>Frequently Asked Questions (English)</h2>
+
+  <details>
+    <summary>Why do some devices show only an IP address and no name?</summary>
+    <p>
+      Names come from Bonjour/mDNS or DNS. Devices that don't announce their name
+      on the network (many simple IoT devices) can't be named, so only the IP
+      remains. That's a property of the device, not a malfunction.
+    </p>
+  </details>
+
+  <details>
+    <summary>Why is the MAC address missing for some devices?</summary>
+    <p>
+      iOS only exposes MAC addresses for devices that were recently active and
+      appear in the system's ARP table. For inactive devices the MAC isn't
+      available. This limitation affects all network apps on iOS equally.
+    </p>
+  </details>
+
+  <details>
+    <summary>Why doesn't the app show exact signal strength in dBm?</summary>
+    <p>
+      iOS does not provide normal apps with an exact dBm value or a reliable
+      signal strength. LANtern therefore measures Wi-Fi quality honestly via the
+      response time to your router: in dead spots it rises noticeably. That's a
+      real, usable measure rather than an invented number.
+    </p>
+  </details>
+
+  <details>
+    <summary>Why can't I find devices on other VLANs?</summary>
+    <p>
+      An iPhone can only reach the subnet it's on. Devices on other VLANs or
+      subnets aren't reachable over the normal IP layer — no iOS app can work
+      around this. The app clearly shows which subnet is currently covered.
+    </p>
+  </details>
+
+  <details>
+    <summary>Scanning a large network takes a while — is that normal?</summary>
+    <p>
+      Yes. Large networks (e.g. a /16 with over 65,000 addresses) take longer.
+      The app warns you beforehand and uses increased concurrency to speed things
+      up.
+    </p>
+  </details>
+
+  <details>
+    <summary>How do I restore my Pro purchase?</summary>
+    <p>
+      Open the purchase screen and tap "Restore purchases". Sign in with the same
+      Apple ID you used to buy.
+    </p>
+  </details>
+
+  <details>
+    <summary>May I scan any network?</summary>
+    <p>
+      No. Only scan networks you own or have explicit permission for. Scanning
+      networks without authorisation may be a criminal offence.
+    </p>
+  </details>
+
+  <p style="margin-top:32px"><a href="datenschutz.html">Datenschutzerklärung</a> ·
+     <a href="privacy.html">Privacy Policy</a></p>
+
+  <footer>© 2026 LANtern.</footer>
+</body>
+</html>
