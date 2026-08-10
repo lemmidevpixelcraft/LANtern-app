@@ -3,182 +3,351 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LANtern – Support & FAQ</title>
+<title>LANtern – Support</title>
 <style>
   :root { color-scheme: light dark; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 32px 20px 80px;
+    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 28px 20px 80px;
     color: #1c1c1e; background: #ffffff;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e5e5ea; background: #1c1c1e; }
-    a { color: #6cb4ff; }
-    .card { background: #2c2c2e !important; border-color: #3a3a3c !important; }
-    details { border-color: #3a3a3c !important; }
-  }
   h1 { font-size: 1.9rem; margin-bottom: 4px; }
-  h2 { font-size: 1.3rem; margin-top: 40px; border-top: 1px solid #e5e5ea; padding-top: 24px; }
   .sub { color: #8e8e93; margin-top: 0; }
   a { color: #0a84ff; }
   .card {
-    background: #f2f2f7; border: 1px solid #e5e5ea; border-radime: 14px;
+    background: #f2f2f7; border: 1px solid #e5e5ea; border-radius: 14px;
     padding: 16px 20px; margin: 20px 0;
   }
   details {
-    border: 1px solid #e5e5ea; border-radime: 12px; padding: 4px 16px; margin: 10px 0;
+    border: 1px solid #e5e5ea; border-radius: 12px; padding: 4px 16px; margin: 10px 0;
   }
   summary { font-weight: 600; cursor: pointer; padding: 10px 0; }
   details p { margin-top: 0; }
   footer { margin-top: 48px; font-size: .85rem; color: #8e8e93; }
+
+  /* Sprachumschalter */
+  .langbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .langbar button {
+    font: inherit; font-size: .95rem; cursor: pointer;
+    padding: 7px 16px; border-radius: 999px;
+    border: 1px solid #d1d1d6; background: #f2f2f7; color: #1c1c1e;
+  }
+  .langbar button[aria-current="true"] {
+    background: #0a84ff; border-color: #0a84ff; color: #ffffff; font-weight: 600;
+  }
+  .langbar button:hover { border-color: #0a84ff; }
+
+  [data-lang] { display: none; }
+  [data-lang].active { display: block; }
+
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e5ea; background: #1c1c1e; }
+    a { color: #6cb4ff; }
+    .card { background: #2c2c2e; border-color: #3a3a3c; }
+    details { border-color: #3a3a3c; }
+    .langbar button { background: #2c2c2e; border-color: #3a3a3c; color: #e5e5ea; }
+    .langbar button[aria-current="true"] { background: #0a84ff; border-color: #0a84ff; color: #fff; }
+  }
 </style>
+<noscript><style>
+  /* Ohne JavaScript: alle Sprachen untereinander zeigen, Umschalter verbergen */
+  [data-lang] { display: block !important; }
+  .langbar { display: none; }
+</style></noscript>
 </head>
 <body>
-  <h1>LANtern – Support</h1>
-  <p class="sub">Hilfe, häufige Fragen und Kontakt · Help, FAQ and contact</p>
 
-  <div class="card">
-    <strong>Kontakt / Contact:</strong><br>
-    Schreib mir bei Fragen, Fehlern oder Wünschen an:<br>
-    For questions, bugs or feature requests, email me at:<br>
-    <a href="mailto:lemmidevpixelcraft@gmail.com">lemmidevpixelcraft@gmail.com</a>
-  </div>
+<h1>LANtern – Support</h1>
+<p class="sub" id="tagline">Hilfe, häufige Fragen und Kontakt</p>
 
-  <h2>Häufige Fragen (Deutsch)</h2>
+<nav class="langbar" id="langbar" aria-label="Sprache / Language">
+  <button type="button" data-set="de">Deutsch</button>
+  <button type="button" data-set="en">English</button>
+  <button type="button" data-set="es">Español</button>
+  <button type="button" data-set="fr">Français</button>
+</nav>
 
+<div class="card">
+  <strong id="contactLabel">Kontakt</strong><br>
+  <span id="contactText">Schreib mir bei Fragen, Fehlern oder Wünschen an:</span><br>
+  <a href="mailto:lemmidevpixelcraft@gmail.com">lemmidevpixelcraft@gmail.com</a>
+</div>
+
+<!-- ===================== DEUTSCH ===================== -->
+<section data-lang="de" class="active">
   <details>
     <summary>Warum sehe ich bei manchen Geräten nur die IP-Adresse und keinen Namen?</summary>
-    <p>
-      Namen stammen ame Bonjour/mDNS oder DNS. Geräte, die ihren Namen nicht im
-      Netzwerk ankündigen (viele einfache IoT-Geräte), lassen sich nicht
-      benennen – dann bleibt nur die IP. Das ist eine Eigenschaft des jeweiligen
-      Geräts, keine Fehlfunktion.
-    </p>
+    <p>Namen stammen aus Bonjour/mDNS oder DNS. Geräte, die ihren Namen nicht im
+    Netzwerk ankündigen (viele einfache IoT-Geräte), lassen sich nicht benennen –
+    dann bleibt nur die IP. Das ist eine Eigenschaft des jeweiligen Geräts, keine
+    Fehlfunktion.</p>
   </details>
 
   <details>
     <summary>Warum fehlt bei manchen Geräten die MAC-Adresse?</summary>
-    <p>
-      iOS gibt MAC-Adressen nur für Geräte herame, die kürzlich aktiv waren und
-      in der ARP-Tabelle des Systems stehen. Für inaktive Geräte ist die MAC
-      nicht verfügbar. Diese Einschränkung betrifft alle Netzwerk-Apps auf iOS
-      gleichermaßen.
-    </p>
+    <p>iOS gibt MAC-Adressen nur für Geräte heraus, die kürzlich aktiv waren und in
+    der ARP-Tabelle des Systems stehen. Für inaktive Geräte ist die MAC nicht
+    verfügbar. Diese Einschränkung betrifft alle Netzwerk-Apps auf iOS gleichermaßen.</p>
   </details>
 
   <details>
     <summary>Warum zeigt die App keine genaue Signalstärke in dBm?</summary>
-    <p>
-      iOS stellt normalen Apps keinen exakten dBm-Wert und keine zuverlässige
-      Signalstärke bereit. LANtern misst die WLAN-Qualität deshalb ehrlich über
-      die Antwortzeit zu deinem Router: In Funklöchern steigt sie spürbar. Das
-      ist ein echtes, nutzbares Maß statt einer erfundenen Zahl.
-    </p>
+    <p>iOS stellt normalen Apps keinen exakten dBm-Wert und keine zuverlässige
+    Signalstärke bereit. LANtern misst die WLAN-Qualität deshalb ehrlich über die
+    Antwortzeit zu deinem Router: In Funklöchern steigt sie spürbar. Das ist ein
+    echtes, nutzbares Maß statt einer erfundenen Zahl.</p>
   </details>
 
   <details>
-    <summary>Warum finde ich keine Geräte ame anderen VLANs?</summary>
-    <p>
-      Ein iPhone kann nur das Subnetz erreichen, in dem es selbst hängt. Geräte
-      in anderen VLANs oder Subnetzen sind über die normale IP-Schicht nicht
-      erreichbar – das kann keine iOS-App umgehen. Die App zeigt dir klar,
-      welches Subnetz gerade abgedeckt ist.
-    </p>
+    <summary>Warum finde ich keine Geräte aus anderen VLANs?</summary>
+    <p>Ein iPhone kann nur das Subnetz erreichen, in dem es selbst hängt. Geräte in
+    anderen VLANs oder Subnetzen sind über die normale IP-Schicht nicht erreichbar –
+    das kann keine iOS-App umgehen. Die App zeigt dir klar, welches Subnetz gerade
+    abgedeckt ist.</p>
   </details>
 
   <details>
     <summary>Der Scan eines großen Netzwerks dauert lange – ist das normal?</summary>
-    <p>
-      Ja. Große Netze (z. B. /16 mit über 65.000 Adressen) brauchen mehr Zeit.
-      Die App weist vorher darauf hin und arbeitet mit erhöhter Parallelität,
-      um es zu beschleunigen.
-    </p>
+    <p>Ja. Große Netze (z. B. /16 mit über 65.000 Adressen) brauchen mehr Zeit. Die
+    App weist vorher darauf hin und arbeitet mit erhöhter Parallelität, um es zu
+    beschleunigen.</p>
   </details>
 
   <details>
     <summary>Wie stelle ich meinen Pro-Kauf wieder her?</summary>
-    <p>
-      Öffne die Kaufansicht und tippe auf „Käufe wiederherstellen". Melde dich
-      dabei mit derselben Apple-ID an, mit der du gekauft hast.
-    </p>
+    <p>Öffne die Kaufansicht und tippe auf „Käufe wiederherstellen“. Melde dich dabei
+    mit derselben Apple-ID an, mit der du gekauft hast.</p>
   </details>
 
   <details>
     <summary>Darf ich jedes Netzwerk scannen?</summary>
-    <p>
-      Nein. Scanne nur Netzwerke, die dir gehören oder für die du eine
-      amedrückliche Erlaubnis hast. Das Scannen fremder Netze kann strafbar sein
-      (§ 202a StGB in Deutschland, § 118a StGB in Österreich).
-    </p>
+    <p>Nein. Scanne nur Netzwerke, die dir gehören oder für die du eine ausdrückliche
+    Erlaubnis hast. Das Scannen fremder Netze kann strafbar sein (§ 202a StGB in
+    Deutschland, § 118a StGB in Österreich).</p>
   </details>
 
-  <h2>Frequently Asked Questions (English)</h2>
+  <p style="margin-top:32px"><a href="datenschutz.html">Datenschutzerklärung</a></p>
+</section>
 
+<!-- ===================== ENGLISH ===================== -->
+<section data-lang="en">
   <details>
     <summary>Why do some devices show only an IP address and no name?</summary>
-    <p>
-      Names come from Bonjour/mDNS or DNS. Devices that don't announce their name
-      on the network (many simple IoT devices) can't be named, so only the IP
-      remains. That's a property of the device, not a malfunction.
-    </p>
+    <p>Names come from Bonjour/mDNS or DNS. Devices that don't announce their name on
+    the network (many simple IoT devices) can't be named, so only the IP remains.
+    That's a property of the device, not a malfunction.</p>
   </details>
 
   <details>
     <summary>Why is the MAC address missing for some devices?</summary>
-    <p>
-      iOS only exposes MAC addresses for devices that were recently active and
-      appear in the system's ARP table. For inactive devices the MAC isn't
-      available. This limitation affects all network apps on iOS equally.
-    </p>
+    <p>iOS only exposes MAC addresses for devices that were recently active and appear
+    in the system's ARP table. For inactive devices the MAC isn't available. This
+    limitation affects all network apps on iOS equally.</p>
   </details>
 
   <details>
     <summary>Why doesn't the app show exact signal strength in dBm?</summary>
-    <p>
-      iOS does not provide normal apps with an exact dBm value or a reliable
-      signal strength. LANtern therefore measures Wi-Fi quality honestly via the
-      response time to your router: in dead spots it rises noticeably. That's a
-      real, meable measure rather than an invented number.
-    </p>
+    <p>iOS does not provide normal apps with an exact dBm value or a reliable signal
+    strength. LANtern therefore measures Wi-Fi quality honestly via the response time
+    to your router: in dead spots it rises noticeably. That's a real, usable measure
+    rather than an invented number.</p>
   </details>
 
   <details>
     <summary>Why can't I find devices on other VLANs?</summary>
-    <p>
-      An iPhone can only reach the subnet it's on. Devices on other VLANs or
-      subnets aren't reachable over the normal IP layer — no iOS app can work
-      around this. The app clearly shows which subnet is currently covered.
-    </p>
+    <p>An iPhone can only reach the subnet it's on. Devices on other VLANs or subnets
+    aren't reachable over the normal IP layer — no iOS app can work around this. The
+    app clearly shows which subnet is currently covered.</p>
   </details>
 
   <details>
     <summary>Scanning a large network takes a while — is that normal?</summary>
-    <p>
-      Yes. Large networks (e.g. a /16 with over 65,000 addresses) take longer.
-      The app warns you beforehand and mees increased concurrency to speed things
-      up.
-    </p>
+    <p>Yes. Large networks (e.g. a /16 with over 65,000 addresses) take longer. The app
+    warns you beforehand and uses increased concurrency to speed things up.</p>
   </details>
 
   <details>
     <summary>How do I restore my Pro purchase?</summary>
-    <p>
-      Open the purchase screen and tap "Restore purchases". Sign in with the same
-      Apple ID you meed to buy.
-    </p>
+    <p>Open the purchase screen and tap “Restore purchases”. Sign in with the same
+    Apple ID you used to buy.</p>
   </details>
 
   <details>
     <summary>May I scan any network?</summary>
-    <p>
-      No. Only scan networks you own or have explicit permission for. Scanning
-      networks without authorisation may be a criminal offence.
-    </p>
+    <p>No. Only scan networks you own or have explicit permission for. Scanning
+    networks without authorisation may be a criminal offence.</p>
   </details>
 
-  <p style="margin-top:32px"><a href="datenschutz.html">Datenschutzerklärung</a> ·
-     <a href="privacy.html">Privacy Policy</a></p>
+  <p style="margin-top:32px"><a href="privacy.html">Privacy Policy</a></p>
+</section>
 
-  <footer>© 2026 LANtern.</footer>
+<!-- ===================== ESPAÑOL ===================== -->
+<section data-lang="es">
+  <details>
+    <summary>¿Por qué en algunos dispositivos solo veo la dirección IP y ningún nombre?</summary>
+    <p>Los nombres provienen de Bonjour/mDNS o de DNS. Los dispositivos que no anuncian
+    su nombre en la red (muchos aparatos domésticos sencillos) no pueden identificarse
+    por nombre, así que solo queda la IP. Es una característica del propio dispositivo,
+    no un fallo.</p>
+  </details>
+
+  <details>
+    <summary>¿Por qué falta la dirección MAC en algunos dispositivos?</summary>
+    <p>iOS solo facilita las direcciones MAC de los dispositivos que han estado activos
+    recientemente y figuran en la tabla ARP del sistema. Para los inactivos, la MAC no
+    está disponible. Esta limitación afecta por igual a todas las apps de red en iOS.</p>
+  </details>
+
+  <details>
+    <summary>¿Por qué la app no muestra la potencia de señal exacta en dBm?</summary>
+    <p>iOS no proporciona a las apps normales un valor exacto en dBm ni una medida
+    fiable de la señal. Por eso LANtern mide la calidad del Wi-Fi de forma honesta a
+    través del tiempo de respuesta hacia tu router: en las zonas sin cobertura aumenta
+    de forma perceptible. Es una medida real y útil en lugar de una cifra inventada.</p>
+  </details>
+
+  <details>
+    <summary>¿Por qué no encuentro dispositivos de otras VLAN?</summary>
+    <p>Un iPhone solo puede alcanzar la subred en la que se encuentra. Los dispositivos
+    de otras VLAN o subredes no son accesibles por la capa IP normal, y ninguna app de
+    iOS puede evitarlo. La app te indica con claridad qué subred está cubriendo.</p>
+  </details>
+
+  <details>
+    <summary>El análisis de una red grande tarda mucho, ¿es normal?</summary>
+    <p>Sí. Las redes grandes (por ejemplo, una /16 con más de 65.000 direcciones)
+    necesitan más tiempo. La app te avisa de antemano y trabaja con mayor paralelismo
+    para acelerarlo.</p>
+  </details>
+
+  <details>
+    <summary>¿Cómo restauro mi compra Pro?</summary>
+    <p>Abre la pantalla de compra y toca «Restaurar compras». Inicia sesión con el mismo
+    ID de Apple que utilizaste para comprar.</p>
+  </details>
+
+  <details>
+    <summary>¿Puedo analizar cualquier red?</summary>
+    <p>No. Analiza únicamente redes que sean tuyas o para las que tengas permiso
+    expreso. Analizar redes ajenas puede constituir un delito (en España, artículos
+    197 bis y siguientes del Código Penal).</p>
+  </details>
+
+  <p style="margin-top:32px"><a href="privacidad.html">Política de privacidad</a></p>
+</section>
+
+<!-- ===================== FRANÇAIS ===================== -->
+<section data-lang="fr">
+  <details>
+    <summary>Pourquoi certains appareils n'affichent-ils qu'une adresse IP, sans nom ?</summary>
+    <p>Les noms proviennent de Bonjour/mDNS ou du DNS. Les appareils qui n'annoncent pas
+    leur nom sur le réseau (beaucoup d'objets connectés simples) ne peuvent pas être
+    nommés : il ne reste alors que l'IP. C'est une caractéristique de l'appareil, pas un
+    dysfonctionnement.</p>
+  </details>
+
+  <details>
+    <summary>Pourquoi l'adresse MAC manque-t-elle pour certains appareils ?</summary>
+    <p>iOS ne communique les adresses MAC que pour les appareils récemment actifs et
+    présents dans la table ARP du système. Pour les appareils inactifs, la MAC n'est pas
+    disponible. Cette limite s'applique de la même façon à toutes les applications
+    réseau sur iOS.</p>
+  </details>
+
+  <details>
+    <summary>Pourquoi l'app n'affiche-t-elle pas la puissance du signal en dBm ?</summary>
+    <p>iOS ne fournit aux applications ordinaires ni valeur exacte en dBm ni mesure
+    fiable du signal. LANtern évalue donc honnêtement la qualité du Wi-Fi à partir du
+    temps de réponse vers votre routeur : dans les zones mortes, il augmente
+    nettement. C'est une mesure réelle et exploitable plutôt qu'un chiffre inventé.</p>
+  </details>
+
+  <details>
+    <summary>Pourquoi ne puis-je pas trouver d'appareils sur d'autres VLAN ?</summary>
+    <p>Un iPhone ne peut atteindre que le sous-réseau sur lequel il se trouve. Les
+    appareils d'autres VLAN ou sous-réseaux ne sont pas accessibles via la couche IP
+    normale, et aucune application iOS ne peut contourner cela. L'app indique clairement
+    quel sous-réseau est couvert.</p>
+  </details>
+
+  <details>
+    <summary>L'analyse d'un grand réseau prend du temps : est-ce normal ?</summary>
+    <p>Oui. Les grands réseaux (par exemple un /16 avec plus de 65 000 adresses)
+    demandent plus de temps. L'app vous prévient à l'avance et augmente le parallélisme
+    pour accélérer l'opération.</p>
+  </details>
+
+  <details>
+    <summary>Comment restaurer mon achat Pro ?</summary>
+    <p>Ouvrez l'écran d'achat et touchez « Restaurer les achats ». Connectez-vous avec
+    l'identifiant Apple utilisé lors de l'achat.</p>
+  </details>
+
+  <details>
+    <summary>Puis-je analyser n'importe quel réseau ?</summary>
+    <p>Non. N'analysez que des réseaux qui vous appartiennent ou pour lesquels vous avez
+    une autorisation explicite. Analyser le réseau d'autrui peut constituer une
+    infraction pénale (en France, articles 323-1 et suivants du code pénal).</p>
+  </details>
+
+  <p style="margin-top:32px"><a href="confidentialite.html">Politique de confidentialité</a></p>
+</section>
+
+<footer>© 2026 LANtern.</footer>
+
+<script>
+(function () {
+  var TEXT = {
+    de: { tag: "Hilfe, häufige Fragen und Kontakt",
+          cl: "Kontakt",
+          ct: "Schreib mir bei Fragen, Fehlern oder Wünschen an:" },
+    en: { tag: "Help, frequently asked questions and contact",
+          cl: "Contact",
+          ct: "For questions, bugs or feature requests, email me at:" },
+    es: { tag: "Ayuda, preguntas frecuentes y contacto",
+          cl: "Contacto",
+          ct: "Para dudas, errores o sugerencias, escríbeme a:" },
+    fr: { tag: "Aide, questions fréquentes et contact",
+          cl: "Contact",
+          ct: "Pour toute question, tout bug ou toute suggestion, écrivez-moi à :" }
+  };
+  var LANGS = ["de", "en", "es", "fr"];
+
+  function apply(lang) {
+    if (LANGS.indexOf(lang) === -1) lang = "en";
+    document.documentElement.lang = lang;
+    document.getElementById("tagline").textContent = TEXT[lang].tag;
+    document.getElementById("contactLabel").textContent = TEXT[lang].cl;
+    document.getElementById("contactText").textContent = TEXT[lang].ct;
+
+    document.querySelectorAll("section[data-lang]").forEach(function (s) {
+      s.classList.toggle("active", s.getAttribute("data-lang") === lang);
+    });
+    document.querySelectorAll("#langbar button").forEach(function (b) {
+      b.setAttribute("aria-current", b.getAttribute("data-set") === lang ? "true" : "false");
+    });
+    try { localStorage.setItem("lantern-lang", lang); } catch (e) {}
+    if (history.replaceState) history.replaceState(null, "", "#" + lang);
+  }
+
+  function initial() {
+    var h = (location.hash || "").replace("#", "");
+    if (LANGS.indexOf(h) !== -1) return h;
+    try {
+      var s = localStorage.getItem("lantern-lang");
+      if (LANGS.indexOf(s) !== -1) return s;
+    } catch (e) {}
+    var nav = (navigator.language || "en").slice(0, 2).toLowerCase();
+    return LANGS.indexOf(nav) !== -1 ? nav : "en";
+  }
+
+  document.getElementById("langbar").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-set]");
+    if (b) apply(b.getAttribute("data-set"));
+  });
+
+  apply(initial());
+})();
+</script>
 </body>
 </html>
