@@ -1,127 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LANtern – Politique de confidentialité</title>
-<style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 28px 20px 80px;
-    color: #1c1c1e; background: #ffffff;
-  }
-  h1 { font-size: 1.9rem; margin-bottom: 4px; }
-  h2 { font-size: 1.25rem; margin-top: 34px; }
-  .sub { color: #8e8e93; margin-top: 0; }
-  a { color: #0a84ff; }
-  .card {
-    background: #f2f2f7; border: 1px solid #e5e5ea; border-radius: 14px;
-    padding: 16px 20px; margin: 20px 0;
-  }
-  .langbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-  .langbar a {
-    font-size: .95rem; text-decoration: none;
-    padding: 7px 16px; border-radius: 999px;
-    border: 1px solid #d1d1d6; background: #f2f2f7; color: #1c1c1e;
-  }
-  .langbar a.here { background: #0a84ff; border-color: #0a84ff; color: #fff; font-weight: 600; }
-  ul { padding-left: 22px; }
-  footer { margin-top: 48px; font-size: .85rem; color: #8e8e93; }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e5e5ea; background: #1c1c1e; }
-    a { color: #6cb4ff; }
-    .card { background: #2c2c2e; border-color: #3a3a3c; }
-    .langbar a { background: #2c2c2e; border-color: #3a3a3c; color: #e5e5ea; }
-    .langbar a.here { background: #0a84ff; border-color: #0a84ff; color: #fff; }
-  }
-</style>
-</head>
-<body>
-<nav class="langbar">
-  <a href="datenschutz.html">Deutsch</a>
-  <a href="privacy.html">English</a>
-  <a href="privacidad.html">Español</a>
-  <a href="confidentialite.html" class="here">Français</a>
-</nav>
-<h1>Politique de confidentialité</h1>
-<p class="sub">LANtern – Scanner de réseau · Mise à jour : 2026</p>
-
-<div class="card">
-  <strong>En bref :</strong> LANtern ne collecte aucune donnée personnelle, ne comporte ni
-  compte, ni publicité, ni traçage. Toute l'analyse de votre réseau se déroule
-  exclusivement sur votre appareil. Aucun résultat d'analyse n'est transmis, ni à moi ni à
-  des tiers.
-</div>
-
-<h2>1. Responsable du traitement</h2>
-<p>Le responsable de cette application au sens du RGPD est le développeur de LANtern.
-Contact pour les questions de confidentialité : <a href="mailto:lemmidevpixelcraft@gmail.com">lemmidevpixelcraft@gmail.com</a>.</p>
-
-<h2>2. Quelles données l'application traite-t-elle ?</h2>
-<p>LANtern est un outil local d'analyse de votre propre réseau Wi-Fi ou LAN.
-L'application traite les éléments suivants, exclusivement sur votre appareil :</p>
-<ul>
-  <li>adresses IP, adresses MAC (dans la mesure où le système les fournit), noms d'hôte,
-      identifiants de fabricant et ports ouverts des appareils de <em>votre propre</em>
-      réseau ;</li>
-  <li>les informations sur le réseau Wi-Fi auquel vous êtes connecté (par exemple son nom),
-      lorsque iOS les met à disposition ;</li>
-  <li>les noms et notes que vous attribuez aux appareils, ainsi que les analyses et relevés
-      de signal que vous enregistrez.</li>
-</ul>
-<p>Toutes ces données restent <strong>uniquement sur votre appareil</strong> (dans la base
-de données de l'application). Elles ne sont transmises ni au développeur ni à des tiers.</p>
-
-<h2>3. Aucune collecte par le développeur</h2>
-<p>LANtern ne contient <strong>aucune</strong> bibliothèque d'analyse d'audience, de
-traçage ou de publicité. Aucune statistique d'utilisation, aucun identifiant et aucune
-donnée personnelle ne sont transmis. Il n'existe pas de compte utilisateur.</p>
-
-<h2>4. Connexions vers l'extérieur</h2>
-<p>La seule connexion que LANtern établit au-delà de votre réseau local est une requête
-vers le service public d'Apple (<code>itunes.apple.com</code>), afin de vérifier si une
-version plus récente de l'application est disponible. Aucune donnée personnelle n'est
-transmise lors de cette requête. Le navigateur intégré ne se connecte qu'aux appareils que
-vous touchez vous-même.</p>
-
-<h2>5. Autorisations</h2>
-<ul>
-  <li><strong>Réseau local :</strong> nécessaire pour trouver les appareils de votre réseau,
-      ce qui constitue la finalité principale de l'application.</li>
-  <li><strong>Localisation (lors de l'utilisation) :</strong> iOS ne communique les
-      informations Wi-Fi telles que le nom du réseau que si l'autorisation de localisation
-      est accordée. L'application n'enregistre ni ne transmet votre position.</li>
-  <li><strong>Notifications (facultatif) :</strong> uniquement si vous activez les alertes
-      concernant les nouveaux appareils.</li>
-</ul>
-
-<h2>6. Achats</h2>
-<p>Les fonctions Pro facultatives passent par l'achat intégré d'Apple. Le paiement est
-traité par Apple ; je ne reçois aucune donnée de paiement ou de carte bancaire. La
-<a href="https://www.apple.com/legal/privacy/">politique de confidentialité d'Apple</a>
-s'applique également.</p>
-
-<h2>7. Enfants</h2>
-<p>LANtern ne s'adresse pas aux enfants et ne collecte aucune donnée les concernant.</p>
-
-<h2>8. Vos droits</h2>
-<p>Puisqu'aucune donnée personnelle n'est collectée, je ne détiens aucune donnée que vous
-pourriez consulter, rectifier ou faire supprimer. Vous pouvez effacer à tout moment les
-données enregistrées localement dans l'application, en supprimant des entrées précises ou
-en désinstallant l'application.</p>
-
-<h2>9. Mention légale sur l'utilisation</h2>
-<p>LANtern ne doit être utilisé que sur des réseaux qui vous appartiennent ou pour lesquels
-vous disposez d'une autorisation explicite. Analyser le réseau d'autrui peut constituer une
-infraction pénale (en France, articles 323-1 et suivants du code pénal). Vous êtes seul
-responsable d'une utilisation licite.</p>
-
-<h2>10. Modifications</h2>
-<p>Cette politique peut être adaptée au fil des évolutions de l'application. La version en
-vigueur est toujours disponible sur cette page.</p>
-
-<p style="margin-top:32px"><a href="support.html">Assistance et questions fréquentes</a></p>
-<footer>© 2026 LANtern. Cette page répond aux exigences de l'App Store et ne constitue pas un conseil juridique.</footer>
-</body>
-</html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LANtern – Politique de confidentialité</title><style>:root{color-scheme:light dark}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:820px;margin:0 auto;padding:32px 20px 60px;line-height:1.6}nav{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}a{color:#0a84ff}h1{line-height:1.15}h2{margin-top:30px}.note{padding:14px 16px;border-radius:12px;background:rgba(128,128,128,.12)}footer{margin-top:40px;color:gray;font-size:.9rem}</style></head><body>
+<nav><a href="datenschutz.html">Deutsch</a><a href="privacy.html">English</a><a href="privacidad.html">Español</a><strong>Français</strong><a href="privacy-it.html">Italiano</a></nav>
+<h1>Politique de confidentialité</h1><p>LANtern – Scanner de réseau · Mise à jour : 8 septembre 2026</p>
+<p class="note"><strong>En bref :</strong> Les analyses réseau et leurs résultats restent sur votre appareil et ne sont transmis ni au développeur ni à Google. La version gratuite de LANtern utilise toutefois Google AdMob pour afficher des publicités. Google et ses partenaires publicitaires peuvent traiter certaines données techniques, d’utilisation et publicitaires. LANtern Pro est sans publicité.</p>
+<h2>1. Responsable du traitement</h2><p>Le responsable de cette application au sens du RGPD est le développeur de LANtern. Contact pour les questions de confidentialité : <a href="mailto:lemmidevpixelcraft@gmail.com">lemmidevpixelcraft@gmail.com</a>.</p>
+<h2>2. Données réseau traitées localement</h2><p>LANtern traite localement des informations telles que les adresses IP, les adresses MAC lorsqu’elles sont disponibles, les noms d’hôte, les identifiants de fabricant, les ports ouverts, les informations Wi‑Fi du réseau actuellement connecté, les noms et notes attribués aux appareils, les analyses enregistrées et les modèles de signal.</p><p>Ces données d’analyse et de réseau ne sont pas utilisées à des fins publicitaires et ne sont transmises ni au développeur, ni à Google AdMob, ni aux partenaires publicitaires.</p>
+<h2>3. Publicité dans la version gratuite</h2><p>La version gratuite utilise le <strong>Google Mobile Ads SDK (AdMob)</strong> pour afficher des bannières publicitaires et, occasionnellement, des annonces interstitielles. LANtern Pro ne demande aucune publicité.</p><p>Lorsqu’une publicité est demandée ou affichée, Google peut traiter certaines données selon votre consentement, votre région, la configuration de l’appareil et la publicité diffusée. Cela peut inclure l’adresse IP, des identifiants d’appareil ou publicitaires, des données de diagnostic et de performance, des données publicitaires telles que les annonces vues, ainsi que des interactions avec l’application ou les annonces. Google et les partenaires publicitaires participants traitent ces informations conformément à leurs propres règles de confidentialité.</p><p>Plus d’informations : <a href="https://policies.google.com/privacy">Règles de confidentialité de Google</a> et <a href="https://policies.google.com/technologies/ads">technologies publicitaires de Google</a>.</p>
+<h2>4. Consentement et confidentialité publicitaire</h2><p>LANtern utilise la <strong>User Messaging Platform (UMP)</strong> de Google afin de recueillir les consentements et choix de confidentialité requis, notamment lorsque cela s’applique dans l’EEE, au Royaume‑Uni et en Suisse. Les publicités ne sont demandées que lorsque l’UMP indique qu’elles peuvent l’être avec l’état de consentement actuel.</p><p>Si un accès aux options de confidentialité est requis dans votre région, vous le trouverez dans <em>Réglages → Confidentialité et publicité</em> sous « Gérer la confidentialité publicitaire ».</p><p>LANtern ne demande actuellement pas l’autorisation App Tracking Transparency (ATT) d’Apple et ne tente pas lui-même de vous suivre entre des applications ou des sites web au moyen de l’IDFA d’Apple.</p>
+<h2>5. Autres connexions sortantes</h2><p>LANtern contacte le point d’accès public <code>itunes.apple.com</code> d’Apple afin de vérifier la disponibilité de mises à jour de l’application. Le navigateur intégré se connecte aux appareils réseau que vous choisissez d’ouvrir. Dans la version gratuite, des connexions Internet vers Google et des partenaires publicitaires sont également effectuées pour la gestion du consentement et la diffusion des annonces.</p>
+<h2>6. Autorisations</h2><ul><li><strong>Réseau local :</strong> nécessaire pour découvrir les appareils de votre propre réseau.</li><li><strong>Localisation (pendant l’utilisation) :</strong> iOS ne rend certaines informations Wi‑Fi disponibles que sous certaines conditions d’autorisation. LANtern ne stocke ni ne transmet votre position physique à des fins publicitaires.</li><li><strong>Notifications (facultatif) :</strong> uniquement si vous activez les alertes pour les nouveaux appareils.</li></ul>
+<h2>7. Achats</h2><p>LANtern Pro est un achat intégré Apple facultatif. Apple traite le paiement ; le développeur ne reçoit aucune donnée de carte bancaire ou de paiement. Les <a href="https://www.apple.com/legal/privacy/">règles de confidentialité d’Apple</a> s’appliquent également. Pro est sans publicité.</p>
+<h2>8. Enfants</h2><p>LANtern n’est pas spécialement destiné aux enfants. L’application ne classe pas elle-même les utilisateurs comme enfants ; les mineurs ne devraient l’utiliser que conformément aux règles applicables et avec une supervision appropriée.</p>
+<h2>9. Vos droits et données locales</h2><p>Vous pouvez supprimer les données d’analyse LANtern stockées localement depuis l’application ou en désinstallant celle-ci. Pour les données traitées par Google dans le cadre de la publicité, les droits applicables en matière de protection des données et les outils de Google s’appliquent ; lorsque cela est requis, vos choix peuvent également être modifiés via les options de confidentialité UMP dans l’application.</p>
+<h2>10. Remarque juridique concernant l’utilisation</h2><p>LANtern ne doit être utilisé que sur des réseaux qui vous appartiennent ou pour lesquels vous disposez d’une autorisation explicite d’analyse. L’analyse de réseaux sans autorisation peut être illégale. Vous êtes responsable d’une utilisation conforme à la loi.</p>
+<h2>11. Modifications</h2><p>Cette politique peut être mise à jour lorsque l’application, les SDK intégrés ou les exigences légales évoluent. La version actuelle est toujours disponible sur cette page.</p>
+<footer><a href="support.html">Assistance et FAQ</a><p>© 2026 LANtern. Cette page est fournie à titre informatif et ne constitue pas un conseil juridique.</p></footer></body></html>

@@ -1,125 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LANtern – Datenschutzerklärung</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 28px 20px 80px;
-    color: #1c1c1e; background: #ffffff;
-  }
-  h1 { font-size: 1.9rem; margin-bottom: 4px; }
-  h2 { font-size: 1.25rem; margin-top: 34px; }
-  .sub { color: #8e8e93; margin-top: 0; }
-  a { color: #0a84ff; }
-  .card {
-    background: #f2f2f7; border: 1px solid #e5e5ea; border-radius: 14px;
-    padding: 16px 20px; margin: 20px 0;
-  }
-  .langbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
-  .langbar a {
-    font-size: .95rem; text-decoration: none;
-    padding: 7px 16px; border-radius: 999px;
-    border: 1px solid #d1d1d6; background: #f2f2f7; color: #1c1c1e;
-  }
-  .langbar a.here { background: #0a84ff; border-color: #0a84ff; color: #fff; font-weight: 600; }
-  ul { padding-left: 22px; }
-  footer { margin-top: 48px; font-size: .85rem; color: #8e8e93; }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e5e5ea; background: #1c1c1e; }
-    a { color: #6cb4ff; }
-    .card { background: #2c2c2e; border-color: #3a3a3c; }
-    .langbar a { background: #2c2c2e; border-color: #3a3a3c; color: #e5e5ea; }
-    .langbar a.here { background: #0a84ff; border-color: #0a84ff; color: #fff; }
-  }
+:root{color-scheme:light dark}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-width:820px;margin:0 auto;padding:32px 20px 60px;line-height:1.6}nav{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}a{color:#0a84ff}h1{line-height:1.15}h2{margin-top:30px}.note{padding:14px 16px;border-radius:12px;background:rgba(128,128,128,.12)}footer{margin-top:40px;color:gray;font-size:.9rem}
 </style>
 </head>
 <body>
-<nav class="langbar">
-  <a href="datenschutz.html" class="here">Deutsch</a>
-  <a href="privacy.html">English</a>
-  <a href="privacidad.html">Español</a>
-  <a href="confidentialite.html">Français</a>
-</nav>
+<nav><strong>Deutsch</strong><a href="privacy.html">English</a><a href="privacidad.html">Español</a><a href="confidentialite.html">Français</a><a href="privacy-it.html">Italiano</a></nav>
 <h1>Datenschutzerklärung</h1>
-<p class="sub">LANtern – Netzwerkscanner · Stand: 2026</p>
-
-<div class="card">
-  <strong>Kurzfassung:</strong> LANtern sammelt keine personenbezogenen Daten,
-  hat keine Konten, keine Werbung und kein Tracking. Alle Analysen deines
-  Netzwerks finden ausschließlich auf deinem Gerät statt. Es werden keine
-  Scan-Ergebnisse an mich oder Dritte übermittelt.
-</div>
-
+<p>LANtern – Netzwerkscanner · Stand: 8. September 2026</p>
+<p class="note"><strong>Kurzfassung:</strong> Die Netzwerk-Scans und deren Ergebnisse bleiben lokal auf deinem Gerät und werden nicht an den Entwickler oder Google übertragen. Die kostenlose Version von LANtern verwendet jedoch Google AdMob zur Anzeige von Werbung. Dabei können Google und seine Werbepartner technische Geräte-, Nutzungs- und Werbedaten verarbeiten. LANtern Pro ist werbefrei.</p>
 <h2>1. Verantwortlicher</h2>
-<p>Verantwortlich für diese App im Sinne der DSGVO ist der Entwickler von LANtern.
-Kontakt für Datenschutzanfragen: <a href="mailto:lemmidevpixelcraft@gmail.com">lemmidevpixelcraft@gmail.com</a>.</p>
-
-<h2>2. Welche Daten verarbeitet die App?</h2>
-<p>LANtern ist ein lokales Werkzeug zur Analyse deines eigenen WLAN- bzw.
-LAN-Netzwerks. Die App verarbeitet ausschließlich auf deinem Gerät:</p>
-<ul>
-  <li>IP-Adressen, MAC-Adressen (soweit vom System bereitgestellt), Hostnamen,
-      Herstellerkennungen und offene Ports der Geräte in <em>deinem eigenen</em> Netzwerk;</li>
-  <li>WLAN-Informationen deines aktuell verbundenen Netzwerks (z.&nbsp;B. Netzwerkname),
-      soweit iOS sie bereitstellt;</li>
-  <li>von dir vergebene Gerätenamen, Notizen und gespeicherte Scans bzw. Signalmuster.</li>
-</ul>
-<p>Alle diese Daten verbleiben <strong>ausschließlich lokal auf deinem Gerät</strong>
-(in der App-Datenbank). Sie werden nicht an den Entwickler und nicht an Dritte übertragen.</p>
-
-<h2>3. Keine Datenerhebung durch den Entwickler</h2>
-<p>LANtern enthält <strong>keine</strong> Analyse-, Tracking- oder Werbe-Bibliotheken.
-Es werden keine Nutzungsstatistiken, Kennungen oder personenbezogenen Daten übermittelt.
-Es gibt keine Benutzerkonten.</p>
-
-<h2>4. Netzwerkverbindungen nach außen</h2>
-<p>Die einzige Verbindung, die LANtern über dein lokales Netzwerk hinaus herstellt, ist
-eine Abfrage der öffentlichen Apple-Schnittstelle (<code>itunes.apple.com</code>), um zu
-prüfen, ob eine neuere App-Version verfügbar ist. Dabei werden keine personenbezogenen
-Daten übermittelt. Der integrierte Browser verbindet sich nur mit Geräten, die du selbst
-antippst.</p>
-
-<h2>5. Berechtigungen</h2>
-<ul>
-  <li><strong>Lokales Netzwerk:</strong> nötig, um Geräte in deinem Netzwerk zu finden –
-      der Kernzweck der App.</li>
-  <li><strong>Standort (bei Nutzung):</strong> iOS gibt WLAN-Details wie den Netzwerknamen
-      nur frei, wenn die Standortberechtigung erteilt ist. Dein Standort wird von der App
-      nicht gespeichert oder übertragen.</li>
-  <li><strong>Mitteilungen (optional):</strong> nur wenn du die Benachrichtigung über neue
-      Geräte aktivierst.</li>
-</ul>
-
-<h2>6. Käufe</h2>
-<p>Optionale Pro-Funktionen werden über Apples In-App-Kauf abgewickelt. Die
-Zahlungsabwicklung erfolgt durch Apple; ich erhalte keine Zahlungs- oder Kreditkartendaten.
-Es gilt zusätzlich die <a href="https://www.apple.com/legal/privacy/">Datenschutzrichtlinie
-von Apple</a>.</p>
-
-<h2>7. Kinder</h2>
-<p>LANtern richtet sich nicht gezielt an Kinder und erhebt keine Daten von ihnen.</p>
-
-<h2>8. Deine Rechte</h2>
-<p>Da keine personenbezogenen Daten erhoben werden, liegen mir keine Daten vor, die du
-einsehen, berichtigen oder löschen lassen könntest. Die lokal in der App gespeicherten
-Daten kannst du jederzeit selbst löschen, indem du einzelne Einträge entfernst oder die
-App deinstallierst.</p>
-
-<h2>9. Rechtlicher Hinweis zur Nutzung</h2>
-<p>LANtern darf nur in Netzwerken eingesetzt werden, die dir gehören oder für die du eine
-ausdrückliche Erlaubnis hast. Das Scannen fremder Netzwerke kann strafbar sein (in
-Deutschland u.&nbsp;a. § 202a StGB, in Österreich § 118a StGB). Die Verantwortung für einen
-rechtmäßigen Einsatz liegt allein bei dir.</p>
-
-<h2>10. Änderungen</h2>
-<p>Diese Erklärung kann angepasst werden, wenn sich die App ändert. Die jeweils aktuelle
-Fassung findest du auf dieser Seite.</p>
-
-<p style="margin-top:32px"><a href="support.html">Support &amp; häufige Fragen</a></p>
-<footer>© 2026 LANtern. Diese Seite dient der Erfüllung der App-Store-Anforderungen und stellt keine Rechtsberatung dar.</footer>
-</body>
-</html>
+<p>Verantwortlich für diese App im Sinne der DSGVO ist der Entwickler von LANtern. Kontakt für Datenschutzanfragen: <a href="mailto:lemmidevpixelcraft@gmail.com">lemmidevpixelcraft@gmail.com</a>.</p>
+<h2>2. Lokal verarbeitete Netzwerkdaten</h2>
+<p>LANtern ist ein lokales Werkzeug zur Analyse deines eigenen WLAN- bzw. LAN-Netzwerks. Die App verarbeitet auf deinem Gerät insbesondere IP-Adressen, MAC-Adressen (soweit vom System bereitgestellt), Hostnamen, Herstellerkennungen, offene Ports, WLAN-Informationen des aktuell verbundenen Netzwerks sowie von dir vergebene Gerätenamen, Notizen, gespeicherte Scans und Signalmuster.</p>
+<p>Diese Scan- und Netzwerkdaten werden nicht für Werbung verwendet und nicht an den Entwickler, Google AdMob oder andere Werbepartner übermittelt.</p>
+<h2>3. Werbung in der kostenlosen Version</h2>
+<p>Die kostenlose Version verwendet das <strong>Google Mobile Ads SDK (AdMob)</strong>, um Banneranzeigen und gelegentlich Vollbildanzeigen (Interstitials) anzuzeigen. LANtern Pro fordert keine Anzeigen an.</p>
+<p>Beim Abruf und bei der Darstellung von Werbung kann Google je nach Einwilligung, Region, Gerätekonfiguration und ausgespielter Anzeige Daten verarbeiten, darunter insbesondere IP-Adresse, Geräte- bzw. Werbekennungen, Diagnose- und Leistungsdaten, Werbedaten (z. B. angezeigte Anzeigen) sowie Interaktionen mit der App oder Werbung. Diese Verarbeitung erfolgt durch Google und gegebenenfalls beteiligte Werbepartner nach deren eigenen Datenschutzbestimmungen.</p>
+<p>Weitere Informationen: <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a> und <a href="https://policies.google.com/technologies/ads">Informationen zu Werbung bei Google</a>.</p>
+<h2>4. Einwilligung und Werbe-Datenschutz</h2>
+<p>LANtern verwendet Googles <strong>User Messaging Platform (UMP)</strong>, um erforderliche Einwilligungen und Datenschutzoptionen – insbesondere für Nutzer im Europäischen Wirtschaftsraum, im Vereinigten Königreich und in der Schweiz – abzufragen. Anzeigen werden erst angefordert, wenn die UMP dies nach dem aktuellen Einwilligungsstatus erlaubt.</p>
+<p>Wenn Google für deine Region einen nachträglichen Zugriff auf Datenschutzoptionen verlangt, findest du in LANtern unter <em>Einstellungen → Datenschutz &amp; Werbung</em> den Punkt „Werbe-Datenschutz verwalten“.</p>
+<p>LANtern fordert derzeit keine App-Tracking-Transparency-Berechtigung (ATT) an und versucht nicht selbst, dich app- oder webseitenübergreifend über Apples IDFA zu verfolgen.</p>
+<h2>5. Weitere Netzwerkverbindungen nach außen</h2>
+<p>LANtern fragt die öffentliche Apple-Schnittstelle <code>itunes.apple.com</code> ab, um zu prüfen, ob eine neuere App-Version verfügbar ist. Der integrierte Browser verbindet sich außerdem mit Netzwerkgeräten, die du selbst öffnest. Zusätzlich entstehen in der kostenlosen Version Internetverbindungen zu Google bzw. Werbepartnern für Consent-Verwaltung und Werbeauslieferung.</p>
+<h2>6. Berechtigungen</h2>
+<ul><li><strong>Lokales Netzwerk:</strong> erforderlich, um Geräte im eigenen Netzwerk zu finden.</li><li><strong>Standort (bei Nutzung):</strong> iOS stellt WLAN-Details wie den Netzwerknamen nur unter bestimmten Voraussetzungen bereit. LANtern speichert oder überträgt deinen Standort nicht für Werbezwecke.</li><li><strong>Mitteilungen (optional):</strong> nur wenn du Benachrichtigungen über neue Geräte aktivierst.</li></ul>
+<h2>7. Käufe</h2>
+<p>LANtern Pro wird als optionaler In-App-Kauf über Apple abgewickelt. Die Zahlungsabwicklung erfolgt durch Apple; der Entwickler erhält keine Zahlungs- oder Kreditkartendaten. Es gilt zusätzlich die <a href="https://www.apple.com/legal/privacy/">Datenschutzrichtlinie von Apple</a>. Pro ist werbefrei.</p>
+<h2>8. Kinder</h2>
+<p>LANtern richtet sich nicht gezielt an Kinder. Die App kennzeichnet Nutzer nicht selbst als Kinder und sollte von Minderjährigen nur im Rahmen der jeweils geltenden Regeln und mit geeigneter Aufsicht verwendet werden.</p>
+<h2>9. Deine Rechte und lokale Daten</h2>
+<p>Die von LANtern gespeicherten Scan-Daten kannst du in der App löschen oder durch Deinstallation der App entfernen. Für Daten, die Google im Zusammenhang mit Werbung verarbeitet, gelten die Auskunfts-, Lösch-, Widerspruchs- und sonstigen Rechte nach den jeweils anwendbaren Datenschutzbestimmungen; entsprechende Einstellungen können – soweit erforderlich – über den UMP-Datenschutzdialog der App geändert werden.</p>
+<h2>10. Rechtlicher Hinweis zur Nutzung</h2>
+<p>LANtern darf nur in Netzwerken eingesetzt werden, die dir gehören oder für die du eine ausdrückliche Erlaubnis hast. Das Scannen fremder Netzwerke kann strafbar sein (in Deutschland u. a. § 202a StGB, in Österreich § 118a StGB). Die Verantwortung für einen rechtmäßigen Einsatz liegt bei dir.</p>
+<h2>11. Änderungen</h2>
+<p>Diese Erklärung kann angepasst werden, wenn sich die App, die eingesetzten SDKs oder rechtliche Anforderungen ändern. Die jeweils aktuelle Fassung findest du auf dieser Seite.</p>
+<footer><a href="support.html">Support &amp; häufige Fragen</a><p>© 2026 LANtern. Diese Seite dient der Information und stellt keine Rechtsberatung dar.</p></footer>
+</body></html>
